@@ -26,7 +26,19 @@ AFRAME.registerComponent('set-image', {
         // Set image.
         data.target.setAttribute('material', 'src', data.src);
       }, data.dur);
+
     });
+
+    el.addEventListener(data.on, function () {
+      // Fade out image.
+      el.setAttribute('geometry', {
+      primitive: 'box',
+      height: 0,
+      width: 0
+    });
+
+    });
+
   },
 
   /**
